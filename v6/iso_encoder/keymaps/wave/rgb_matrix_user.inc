@@ -76,7 +76,7 @@ static bool hwelle(effect_params_t* params) {
         }
         // +++++++++++++
 
-        // Dies ist die entscheidende Logik, die die Welle sichtbar macht. // if the new brightness is bigger than the base brightness set that RGB to the output brightness from the "hwelle_math" funktion
+        // if the new brightness is bigger than the base brightness set that RGB to the output brightness from the "hwelle_math" funktion
         if (hsv_effect.v > base_hsv.v) {
             rgb_t rgb_effect = rgb_matrix_hsv_to_rgb(hsv_effect);                // same as above just inside  of the loop
             rgb_matrix_set_color(i, rgb_effect.r, rgb_effect.g, rgb_effect.b);
