@@ -1,0 +1,89 @@
+RGB_MATRIX_EFFECT(hwelle)
+
+
+#ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS
+
+
+// the compiler need to know what "hwelle_hit_tracker_t" is and that the actual data comes from elsewhere (keymap.c)
+typedef struct {
+    uint8_t x;
+    uint8_t y;
+    uint32_t tick;
+} hwelle_hit_tracker_t;
+// more like trust me there is something
+extern hwelle_hit_tracker_t hwelle_tracker;
+
+
+
+
+static hsv_t hwelle_math(hsv_t hsv, int16_t dx, int16_t dy, uint8_t dist, uint16_t tick) {
+    // if RGB is inside of wave
+    if (tick > dist && tick < dist + 30) {
+        // set brightness to max
+        hsv.v = 255;
+    } else {
+        // else don’t change brightness
+        hsv.v = 0;
+    }
+    return hsv;
+}
+
+// where the fun begins
+static bool hwelle(effect_params_t* params) {
+    rgb_matrix_set_flags(LED_FLAG_ALL);      //don’t need the Caps indicator so I choose to address all flags
+    RGB_MATRIX_USE_LIMITS(led_min, led_max);  //set the borders for the first and last RGB
+
+
+    // i thought that the was a problem with obtaining the X Y values but it seems not to
+    uprintf("[READER] Animation startet mit Tracker: x=%u, y=%u\n", hwelle_tracker.x, hwelle_tracker.y);
+    //
+    //
+    hsv_t base_hsv = rgb_matrix_config.hsv;  //set the base value of the "background"
+    base_hsv.v = 80;                         //ca. 30%
+
+    rgb_t base_color = rgb_matrix_hsv_to_rgb(base_hsv);   // get the global color as "hsv" and transform it to an RGB value
+    rgb_matrix_set_color_all(base_color.r, base_color.g, base_color.b); // set all RGBs in the matrix to that color the background
+
+    uint32_t elapsed_time = timer_read32() - hwelle_tracker.tick;  // how many time since the last keypress
+    // should stop the effeckt after a second so the the wave wont be stuck
+    if (elapsed_time > 1000) {
+        return rgb_matrix_check_finished_leds(led_max);
+    }
+    // creating the wave
+    // 'elapsed_time' passed time, 'rgb_matrix_config.speed' the speed.
+    // increas in passed time and increse of speed makes the wave bigger
+    uint16_t tick_scaled = scale16by8(elapsed_time, qadd8(rgb_matrix_config.speed, 8));
+
+    // main loop goes troug every RGB set within the (led_min, led_max) range
+    for (uint8_t i = led_min; i < led_max; i++) {
+        //checks if we have the premission to use the RGBs
+        //based on the flags we cant set somewhre and deffined earlyer by "LED_FLAG_ALL" all means all
+        RGB_MATRIX_TEST_LED_FLAGS();
+
+
+        //Caculate the Radius for every RGB "i"
+        int16_t dx   = g_led_config.point[i].x - hwelle_tracker.x;
+        int16_t dy   = g_led_config.point[i].y - hwelle_tracker.y;
+        uint16_t dist = sqrt16(dx * dx + dy * dy);
+
+        // pass the Radius to "hwelle_math" and gives back the Caculated brightness
+        hsv_t hsv_effect = hwelle_math(rgb_matrix_config.hsv, dx, dy, dist, tick_scaled);
+
+        //
+        // it has to be someting with actually getting the center and using the led als start for the wave
+        if (dist < 5) {
+            uprintf("ZENTRUM (LED %u): dist=%u, tick=%u -> effect_v=%u\n", i, dist, tick_scaled, hsv_effect.v);
+        }
+        // +++++++++++++
+
+        // Dies ist die entscheidende Logik, die die Welle sichtbar macht. // if the new brightness is bigger than the base brightness set that RGB to the output brightness from the "hwelle_math" funktion
+        if (hsv_effect.v > base_hsv.v) {
+            rgb_t rgb_effect = rgb_matrix_hsv_to_rgb(hsv_effect);                // same as above just inside  of the loop
+            rgb_matrix_set_color(i, rgb_effect.r, rgb_effect.g, rgb_effect.b);
+        }
+    }
+
+    return rgb_matrix_check_finished_leds(led_max);     // Says true to the bool when we reaced "led_max"
+}
+// should repeat it self ultill change to an other effeckt can confrim
+#endif // RGB_MATRIX_CUSTOM_EFFECT_IMPLS

@@ -1,0 +1,52 @@
+Ψ Console Disconnected: Keychron Keychron V6 (3434:0363:1)
+Ψ Console Connected: Keychron Keychron V6 (3434:0363:1)
+Keychron:Keychron V6:1: [WRITER] Setze Tracker auf: x=193, y=27                      <-- First press ever after strart
+Keychron:Keychron V6:1: [WRITER] Setze Tracker auf: x=169, y=0                       <-- Press on VIO_WAVE toggels my effect "hwave"
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: ZENTRUM (LED 14): dist=0, tick=0 -> effect_v=0               <-- It has the LED value "i"
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+...
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: ZENTRUM (LED 14): dist=0, tick=10 -> effect_v=255
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: ZENTRUM (LED 14): dist=0, tick=19 -> effect_v=255
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: ZENTRUM (LED 14): dist=0, tick=108 -> effect_v=0
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=169, y=0
+Keychron:Keychron V6:1: [WRITER] Setze Tracker auf: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: ZENTRUM (LED 57): dist=0, tick=7 -> effect_v=255              <-- And it changes
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: ZENTRUM (LED 57): dist=0, tick=16 -> effect_v=255
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: ZENTRUM (LED 57): dist=0, tick=25 -> effect_v=255
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: ZENTRUM (LED 57): dist=0, tick=34 -> effect_v=0
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+Keychron:Keychron V6:1: [READER] Animation startet mit Tracker: x=193, y=27
+
