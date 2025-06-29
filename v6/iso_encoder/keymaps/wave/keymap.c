@@ -101,10 +101,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         uint8_t row = record->event.key.row;
         uint8_t col = record->event.key.col;
 
-        // Zurück zum direkten Zugriff, da die Funktion nicht verfügbar ist.
+       
         uint8_t led_index = g_led_config.matrix_co[row][col];
 
-        // Dieser Debug-Print ist entscheidend, um den Logikfehler zu finden.
+        
         uprintf("key: (row=%u, col=%u) -> led_index: %u\n", row, col, led_index);
 
         if (led_index != NO_LED) {
@@ -112,11 +112,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             hwelle_tracker.y = g_led_config.point[led_index].y;
             hwelle_tracker.tick = timer_read32();
 
-            //uprintf("[WRITER] Set Tracker: x=%u, y=%u\n", hwelle_tracker.x, hwelle_tracker.y);
+         
         }
 
         switch (keycode) {
-            // ... (dein switch-Statement bleibt unverändert) ...
+        
             case H_WAVE:
                 rgb_matrix_mode(RGB_MATRIX_CUSTOM_hwelle);
                 return false;
