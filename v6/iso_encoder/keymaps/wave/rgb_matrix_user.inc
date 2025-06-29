@@ -57,7 +57,7 @@ static bool hwelle(effect_params_t* params) {
     // main loop goes troug every RGB set within the (led_min, led_max) range
     for (uint8_t i = led_min; i < led_max; i++) {
         //checks if we have the premission to use the RGBs
-        //based on the flags we cant set somewhre and deffined earlyer by "LED_FLAG_ALL" all means all
+        //based on the flags we can set somewhre and deffined earlyer by "LED_FLAG_ALL" all means all
         RGB_MATRIX_TEST_LED_FLAGS();
 
 
