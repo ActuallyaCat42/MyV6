@@ -83,7 +83,7 @@ static bool hwelle(effect_params_t* params) {
         }
     }
 
-    return rgb_matrix_check_finished_leds(led_max);     // Says true to the bool when we reaced "led_max"
+    return rgb_matrix_check_finished_leds(led_max);     // Says true to the bool when we reached "led_max"
 }
 // should repeat it self ultill change to an other effeckt can confrim
 #endif // RGB_MATRIX_CUSTOM_EFFECT_IMPLS
